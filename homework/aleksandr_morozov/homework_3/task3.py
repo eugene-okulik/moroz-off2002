@@ -2,7 +2,7 @@
 
 a = int(input("Введите первое число: "))
 b = int(input("Введите второе число: "))
-sr_arifm = (a+b)/2
-sr_geometr = (a*b)**0.5
+sr_arifm = (a + b) / 2
+sr_geometr = (a * b) ** 0.5
 print("Среднее арифметическое а и b:", sr_arifm)
 print("Среднее геометрическое a и b:", sr_geometr)
