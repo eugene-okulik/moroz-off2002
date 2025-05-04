@@ -4,7 +4,7 @@ my_dict = {
     'my_tuple': (2, 5, 10, 43, 'super'),   # кортеж
     'my_list': ['one', 'two', 'three', 'four', 'five'],   # список
     'my_dict_inc': {'name': 'myname', 'surname': 'mysurname', 'age': 'myage', 'city': 'mycity',
-                'country': 'mycountry'},   # словарь
+                    'country': 'mycountry'},   # словарь
     'my_set': {35, 11, 33, 11, 89, 0}   # множество
 }
 a = my_dict['my_tuple']
