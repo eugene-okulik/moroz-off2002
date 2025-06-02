@@ -18,10 +18,37 @@
 
 def decorator(func):
 
-    def wrapper(first, second, operation)
+    def wrapper(first, second):
+
+        if first * second < 0:
+            calc(first, second, '*')
+            return func
+        elif first == second:
+            calc(first, second, '+')
+            return func
+        elif first > second:
+            calc(first, second, '-')
+            return func
+        elif first < second:
+            calc(first, second, '/')
+            return func
+    return wrapper
+
+
+@decorator
 def calc(first, second, operation):
     if operation == '+':
         return first + second
-    elif
+    elif operation == '-':
+        return first - second
+    elif operation == '*':
+        return first * second
+    elif operation == '/':
+        return first / second
+    else:
+        return 'incorrect operation'
 
-first, second = int(input('Введите 2 числа:'))
+
+first = int(input('Введите 1е число: '))
+second = int(input('Введите 2е число: '))
+calc(first, second)
