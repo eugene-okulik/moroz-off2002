@@ -6,13 +6,11 @@ class Book:
     exist_text = True
     is_reserved = False
 
-
     def __init__(self, title, author, page_qty, isbn):
         self.title = title
         self.author = author
         self.page_qty = page_qty
         self.isbn = isbn
-
 
     def about(self):
         if self.is_reserved:
@@ -30,7 +28,6 @@ class SchoolBook(Book):
         self.grade = grade
         self.exist_exercise = exist_exercise
 
-
     def about(self):
         if self.is_reserved:
             print(f'Название: {self.title}, Автор: {self.author}, страниц: {self.page_qty}, предмет: {self.subject}, '
@@ -45,8 +42,7 @@ school_book1 = SchoolBook('Русский язык', 'Мария Закожур�
 school_book2 = SchoolBook('Геометрия', 'Татьяна Виноградова', 112, '978-5-04-117721-8',
                           'Математика', 7, True)
 school_book3 = SchoolBook('Чтение', 'Татьяна Головкина, Светлана Ильина', 270,
-                          '978-5-09-100016-0','Чтение', 6, False)
-
+                          '978-5-09-100016-0', 'Чтение', 6, False)
 
 school_book1.about()
 school_book2.about()

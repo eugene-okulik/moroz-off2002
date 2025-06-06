@@ -6,13 +6,11 @@ class Book:
     exist_text = True
     is_reserved = False
 
-
     def __init__(self, title, author, page_qty, isbn):
         self.title = title
         self.author = author
         self.page_qty = page_qty
         self.isbn = isbn
-
 
     def about(self):
         if self.is_reserved:
