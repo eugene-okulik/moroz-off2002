@@ -55,6 +55,11 @@ class Bouquet:
     def __init__(self, *flowers):
         self.list = [*flowers]
 
+    def avg_lifetime(self):
+        sum_lifetime = sum(flower.lifetime for flower in self.list)
+        avg_lifetime = sum_lifetime / len(self.list)
+        return avg_lifetime
+
     def sort_by_colour(self):
         sorted_list = sorted(self.list, key=lambda x: x.colour)
         return sorted_list
@@ -87,6 +92,7 @@ flower4 = Rose('good', "white")
 flower5 = Tulip('bad', "violet")
 
 bouquet1 = Bouquet(flower1, flower2, flower5, flower4, flower3)
+print(bouquet1.avg_lifetime())
 print(bouquet1.list)
 print(bouquet1.sort_by_colour())
 print(bouquet1.sort_by_freshness())
