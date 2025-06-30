@@ -1,15 +1,18 @@
-import os, datetime
+import os
+import datetime
 
 
 homework_path = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
 eugene_file_path = os.path.join(homework_path, 'eugene_okulik', 'hw_13', 'data.txt')
 # print(eugene_file_path)
 
+
 def read_file():
     with open(eugene_file_path) as data_file:
         # print(data_file.read())
         for line in data_file.readlines():
             yield line
+
 
 for data_line in read_file():
     line_index = int(data_line[0])
