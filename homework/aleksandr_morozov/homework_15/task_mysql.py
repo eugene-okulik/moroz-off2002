@@ -3,9 +3,11 @@
 import mysql.connector as mysql
 import random
 
+
 def print_cursor(func):
     for row in func:
         print(row)
+
 
 # задаем параметры подключения в БД
 db = mysql.connect(
@@ -30,7 +32,7 @@ insert_books_query = "INSERT INTO books (title, taken_by_student_id) VALUES (%s,
 cursor.executemany(
     insert_books_query, [
         ('Путь к Основанию', student_id),
-	    ('Позитронный человек', student_id)
+        ('Позитронный человек', student_id)
     ]
 )
 
@@ -57,7 +59,9 @@ for subject in subjects:
         cursor.execute(f"INSERT INTO lessons (title, subject_id) VALUES ('{lesson}', '{subject_id}')")
         lessons_id.append(cursor.lastrowid)
         mark = random.randint(61, 100)
-        cursor.execute(f"INSERT INTO marks (value, lesson_id, student_id) VALUES ('{mark}', '{cursor.lastrowid}', {student_id})")
+        cursor.execute(
+            f"INSERT INTO marks (value, lesson_id, student_id) VALUES ('{mark}', '{cursor.lastrowid}', {student_id})"
+        )
         marks_id.append(cursor.lastrowid)
 
 print('student_id', student_id, 'group_id', group_id)
@@ -71,9 +75,9 @@ cursor.execute(f"SELECT * FROM books WHERE taken_by_student_id = {student_id}")
 result_books = list(cursor.fetchall())
 
 select_query = f'''
-SELECT s.name as 'Имя', s.second_name as 'Фамилия', g.title as 'Группа', s2.title as 'Предмет', m.value as 'Оценка', 
+SELECT s.name as 'Имя', s.second_name as 'Фамилия', g.title as 'Группа', s2.title as 'Предмет', m.value as 'Оценка',
 l.title as 'Урок', b.title as 'Книга'
-FROM students s 
+FROM students s
 JOIN `groups` g ON s.group_id = g.id
 JOIN books b ON s.id = b.taken_by_student_id
 JOIN marks m ON s.id = m.student_id
