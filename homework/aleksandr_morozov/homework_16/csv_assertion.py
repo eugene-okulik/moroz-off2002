@@ -39,8 +39,8 @@ with open(eugene_file_path, newline='') as csv_file:
         JOIN marks m ON s.id = m.student_id
         JOIN lessons l ON m.lesson_id = l.id
         JOIN subjects s3 ON l.subject_id = s3.id
-        WHERE s.name=%s AND s.second_name=%s AND g.title=%s 
-        AND b.title=%s AND s3.title=%s 
+        WHERE s.name=%s AND s.second_name=%s AND g.title=%s
+        AND b.title=%s AND s3.title=%s
         AND l.title=%s AND m.value=%s
         '''
         # Подставляем параметры в запрос и выводим полный запрос
