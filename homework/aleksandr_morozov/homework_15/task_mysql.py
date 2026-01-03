@@ -53,7 +53,7 @@ lessons_id = []
 marks_id = []
 
 for subject in subjects:
-    cursor.execute(f"INSERT INTO subjets (title) VALUES ('{subject}')")
+    cursor.execute(f"INSERT INTO subjects (title) VALUES ('{subject}')")
     subject_id = cursor.lastrowid
     for lesson in lessons:
         cursor.execute(f"INSERT INTO lessons (title, subject_id) VALUES ('{lesson}', '{subject_id}')")
@@ -82,7 +82,7 @@ JOIN `groups` g ON s.group_id = g.id
 JOIN books b ON s.id = b.taken_by_student_id
 JOIN marks m ON s.id = m.student_id
 JOIN lessons l ON m.lesson_id = l.id
-JOIN subjets s2 ON l.subject_id = s2.id
+JOIN subjects s2 ON l.subject_id = s2.id
 WHERE s.id = {student_id}
 '''
 
