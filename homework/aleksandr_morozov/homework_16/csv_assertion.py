@@ -32,7 +32,7 @@ with open(eugene_file_path, newline='') as csv_file:
         # Выводим строку из файла
         print(f'\nОбрабатывается следующая строка файла:\n{row}\n')
         # Формируем SQL-запрос для проверки существования записи в базе данных
-        select_query = f'''
+        select_query = '''
         SELECT COUNT(*) FROM students s
         JOIN `groups` g ON s.group_id = g.id
         JOIN books b ON s.id = b.taken_by_student_id
