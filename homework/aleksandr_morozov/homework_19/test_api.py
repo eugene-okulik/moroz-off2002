@@ -49,9 +49,9 @@ def new_object():
         'http://objapi.course.qa-practice.com/object',
         json=body,
         headers=headers
-    )
-    print(f'Создан объект с id {response.json()['id']}')
-    return response.json()['id']
+    ).json()
+    print(f'Создан объект с id {response['id']}')
+    return response['id']
 
 
 def clear(object_id):
