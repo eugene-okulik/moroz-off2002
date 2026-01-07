@@ -50,13 +50,13 @@ def new_object():
         json=body,
         headers=headers
     )
-    print(f'Создан объект с id ', response.json()['id'])
+    print(f'Создан объект с id {response.json()['id']}')
     return response.json()['id']
 
 
 def clear(object_id):
     requests.delete(f'http://objapi.course.qa-practice.com/object/{object_id}')
-    print(f'Удален объект с id ', object_id)
+    print(f'Удален объект с id {object_id}')
 
 
 def put_an_object():
