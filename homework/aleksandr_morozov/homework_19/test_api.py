@@ -17,12 +17,12 @@ def one_object():
 def post_an_object():
     body = {
         "data": {
-				"color": "blue",
-				"id": 123,
-				"name": "colour",
-				"size": None
-		},
-		"name": "NewPostman"
+            "color": "blue",
+            "id": 123,
+            "name": "colour",
+            "size": None
+        },
+        "name": "NewPostman"
     }
     headers = {'Content-Type': 'application/json'}
     response = requests.post(
@@ -37,12 +37,12 @@ def post_an_object():
 def new_object():
     body = {
         "data": {
-				"color": "black",
-				"id": 777,
-				"name": "colour",
-				"size": "great"
-		},
-		"name": "Newman"
+            "color": "black",
+            "id": 777,
+            "name": "colour",
+            "size": "great"
+        },
+        "name": "Newman"
     }
     headers = {'Content-Type': 'application/json'}
     response = requests.post(
@@ -50,7 +50,7 @@ def new_object():
         json=body,
         headers=headers
     )
-    print (f'Создан объект с id ', response.json()['id'])
+    print(f'Создан объект с id ', response.json()['id'])
     return response.json()['id']
 
 
@@ -63,12 +63,12 @@ def put_an_object():
     object_id = new_object()
     body = {
         "data": {
-				"color": "green",
-				"id": 111,
-				"name": "colour",
-				"size": "well"
-		},
-		"name": "NewPutman"
+            "color": "green",
+            "id": 111,
+            "name": "colour",
+            "size": "well"
+        },
+        "name": "NewPutman"
     }
     headers = {'Content-Type': 'application/json'}
     response = requests.put(
@@ -83,7 +83,7 @@ def put_an_object():
 
 def patch_an_object():
     object_id = new_object()
-    body = {"name": "NewPatchman"    }
+    body = {"name": "NewPatchman"}
     headers = {'Content-Type': 'application/json'}
     response = requests.patch(
         f'http://objapi.course.qa-practice.com/object/{object_id}',
