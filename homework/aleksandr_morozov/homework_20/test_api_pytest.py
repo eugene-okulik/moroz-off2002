@@ -15,6 +15,7 @@ def every_test():
     yield
     print('after test')
 
+
 @pytest.fixture()
 def new_object():
     body = {
@@ -46,7 +47,7 @@ def test_get_one(new_object):
     assert response['id'] == new_object, 'Object not found'
 
 
-@pytest.mark.parametrize('name', ['ONE MAN','twoMan', '123_man'])
+@pytest.mark.parametrize('name', ['ONE MAN', 'twoMan', '123_man'])
 def test_post_object(name):
     body = {
         "data": {
