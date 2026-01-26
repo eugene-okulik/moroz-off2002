@@ -6,7 +6,7 @@ import allure
 @allure.feature('API')
 @allure.story('Получение объектов')
 @allure.title('GET /object - получение списка всех объектов')
-@allure.issue('https://ru.ruwiki.ru/wiki/Авиация_эфиопо-эритрейского_конфликта','SCP-111. Подготовка API ч.1')
+@allure.issue('https://ru.ruwiki.ru/wiki/Авиация_эфиопо-эритрейского_конфликта', 'SCP-111. Подготовка API ч.1')
 @allure.id('T1001')
 @pytest.mark.medium
 def test_get_all(start):
@@ -21,7 +21,7 @@ def test_get_all(start):
 @allure.feature('API')
 @allure.story('Получение объектов')
 @allure.title('GET /object/{objectId} - получение одного объекта')
-@allure.issue('https://ru.ruwiki.ru/wiki/Бакинская_офицерская_школа_морской_авиации','SCP-222. Подготовка API ч.2')
+@allure.issue('https://ru.ruwiki.ru/wiki/Бакинская_офицерская_школа_морской_авиации', 'SCP-222. Подготовка API ч.2')
 @allure.id('T1002')
 def test_get_one(new_object):
     with allure.step('Вызов метода по REST'):
